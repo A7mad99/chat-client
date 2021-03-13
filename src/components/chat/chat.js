@@ -9,8 +9,9 @@ import Input from '../Input/Input';
 
 import './chat.css';
 
-const ENDPOINT = 'https://ahmad-chat-app.herokuapp.com/';
-
+const ENDPOINT = 'https://ahmad-chat-app.herokuapp.com/'
+// "http://localhost:5000"
+//'https://ahmad-chat-app.herokuapp.com/'
 let socket;
 
 const Chat = ({ location }) => {
@@ -35,8 +36,7 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
-  
+  }, [location.search]);  
   useEffect(() => {
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
